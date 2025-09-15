@@ -44,12 +44,12 @@ Trước khi tham gia, bạn nên nắm:
 3. **Xây dựng ứng dụng thực tế**
 
    - To-do App với React + TS
-   - Quản lý State nâng cao (useReducer, Zustand hoặc Redux Toolkit)
-   - Tích hợp API (REST / GraphQL)
+   - Quản lý State (useState)
+   - Tích hợp API (REST)
 
 4. **Triển khai & tối ưu**
    - Setup dự án với **Vite + TypeScript**
-   - Tối ưu performance (memo, lazy loading, suspense)
+   - Tối ưu performance (lazy loading)
    - Deploy ứng dụng lên Vercel/Netlify
 
 ---
