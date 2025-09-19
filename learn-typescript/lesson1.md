@@ -62,7 +62,17 @@ tsc -v
 ### Biên dịch TypeScript code
 
 1. Tạo file `.ts` (ví dụ: `app.ts`).
-2. Biên dịch file TypeScript thành JavaScript:
+2. **Chạy trực tiếp file `.ts`**:
+   - Sử dụng `tsx` để chạy trực tiếp mà không cần biên dịch:
+     ```bash
+     npm install -g tsx
+     tsx app.ts
+     ```
+     Hoặc với file TSX:
+     ```bash
+     tsx app.tsx
+     ```
+3. Biên dịch file TypeScript thành JavaScript:
    ```bash
    tsc app.ts
    ```
