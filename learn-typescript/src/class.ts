@@ -44,3 +44,12 @@ class User extends Person {
 const u1 = new User("hoadv", 36, true, 10, "admin");
 u1.name;
 console.log(u1.say());
+
+//  interface : object
+interface IPerson {
+  name: string;
+  age: number;
+  gender: boolean;
+  role: string;
+  say(): void;
+}
