@@ -1,12 +1,12 @@
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 
 function App() {
-
   return (
     <>
-      <Toaster/>
+      <div>Hello React Typesscript</div>
+      <Toaster />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
