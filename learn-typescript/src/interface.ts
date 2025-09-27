@@ -42,3 +42,34 @@ const m1: IManager = {
   role: "manager",
   dept: "HR",
 };
+
+// Generics Typescript
+function printArray<T>(array: T[]): T[] {
+  console.log(array);
+  return array;
+}
+const numberArray: number[] = [1, 2, 3];
+printArray(numberArray); // [1, 2, 3]
+
+interface IProduct {
+  title: string;
+}
+interface ICategory {
+  name: string;
+}
+
+interface ApiResponse<T> {
+  message: string;
+  code: number;
+  success: boolean;
+  data: T;
+}
+
+const productRes: ApiResponse<IProduct> = {
+  message: "Ok",
+  code: 200,
+  success: true,
+  data: {
+    title: "San pham 1",
+  },
+};
