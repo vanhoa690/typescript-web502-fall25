@@ -44,12 +44,12 @@ const m1: IManager = {
 };
 
 // Generics Typescript
-function printArray<T>(array: T[]): T[] {
-  console.log(array);
-  return array;
-}
-const numberArray: number[] = [1, 2, 3];
-printArray(numberArray); // [1, 2, 3]
+// function printArray<T>(array: T[]): T[] {
+//   console.log(array);
+//   return array;
+// }
+// const numberArray: number[] = [1, 2, 3];
+// printArray(numberArray); // [1, 2, 3]
 
 interface IProduct {
   title: string;
@@ -65,6 +65,20 @@ interface ApiResponse<T> {
   data: T;
 }
 
+// interface ApiResponseProduct {
+//   message: string;
+//   code: number;
+//   success: boolean;
+//   data: IProduct;
+// }
+
+// interface ApiResponseCategory {
+//   message: string;
+//   code: number;
+//   success: boolean;
+//   data: ICategory;
+// }
+
 const productRes: ApiResponse<IProduct> = {
   message: "Ok",
   code: 200,
@@ -73,3 +87,39 @@ const productRes: ApiResponse<IProduct> = {
     title: "San pham 1",
   },
 };
+
+const categoryRes: ApiResponse<ICategory> = {
+  message: "Ok",
+  code: 200,
+  success: true,
+  data: {
+    name: "Danh muc 1",
+  },
+};
+
+// Enum  TypeScript
+enum Status {
+  Suceess, // 0
+  Error, // 1
+  Loading, // 2
+}
+
+console.log(Status.Suceess);
+
+enum OrderStatus {
+  PENDIND = "PENDIND",
+  CONFIRMED = "CONFIRMED",
+  SHIPPING = "SHIPPING",
+}
+
+const orderStatus: OrderStatus = "SHIPPING" as OrderStatus;
+if (orderStatus == OrderStatus.CONFIRMED) {
+  console.log(OrderStatus.SHIPPING);
+}
+
+enum PaymentStatus {
+  SUCCESS = "SUCCESS",
+  FAILED = "FAILED",
+}
+
+console.log(PaymentStatus.SUCCESS);
