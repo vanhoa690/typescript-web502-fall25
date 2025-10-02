@@ -15,15 +15,15 @@ const MyUseState = () => {
       <Button label="Tăng Count" color="blue" onClick={handleInc}></Button>
       <Button
         label="Tăng Count cach 2"
-        color="blue"
+        color="green"
         onClick={() => setCount(count + 1)}
       />
       <Button
         label="Giảm Count "
-        color="blue"
+        color="yellow"
         onClick={() => setCount(count - 1)}
       />
-      <Button label="Reset Count " color="blue" onClick={() => setCount(0)} />
+      <Button label="Reset Count" color="blue" onClick={() => setCount(0)} />
     </div>
   );
 };
