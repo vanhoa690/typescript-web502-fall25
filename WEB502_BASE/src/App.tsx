@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import Button from "./components/Button";
+import MyUseState from "./components/MyUseState";
 
 function App() {
   const handleClick = () => alert("Clicked!");
@@ -7,9 +8,9 @@ function App() {
   return (
     <>
       <div>Hello React Typesscript</div>
-
-      <Button label="Click Me 21" onClick={handleClick} />
-      <Button label="Click Me 3" onClick={handleClick} />
+      <MyUseState />
+      {/* <Button label="Click Me 21" onClick={handleClick} />
+      <Button label="Click Me 3" onClick={handleClick} /> */}
       <Toaster />
     </>
   );
