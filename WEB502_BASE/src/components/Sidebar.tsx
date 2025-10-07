@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white"
       style={{ width: "250px", height: "100vh" }}
     >
-      <a
-        href="/"
+      <Link
+        to="/"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
-        <span className="fs-4">MyApp</span>
-      </a>
+        <span className="fs-4">WEB502 Admin</span>
+      </Link>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
