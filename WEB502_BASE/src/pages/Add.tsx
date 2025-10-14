@@ -1,13 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const createSchema = z.object({
-  name: z.string().min(1),
-  image: z.string().min(1),
+  name: z.string().min(10, "Tên sản phẩm không được để trống"),
+  image: z.string().min(10, "Hinh anh không được để trống"),
 });
 
 interface FormData {
@@ -16,7 +15,11 @@ interface FormData {
 }
 function Add() {
   // react hook form
-  const { register, handleSubmit } = useForm<FormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: zodResolver(createSchema),
   });
 
@@ -41,6 +44,7 @@ function Add() {
             id="name"
           />
           {/* {errors} */}
+          {errors?.name && <span>{errors.name.message}</span>}
         </div>
         <div className="mb-3">
           <label htmlFor="image" className="form-label">
@@ -53,6 +57,7 @@ function Add() {
             id="image"
           />
           {/* {errors} */}
+          {errors?.image && <span>{errors.image.message}</span>}
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
