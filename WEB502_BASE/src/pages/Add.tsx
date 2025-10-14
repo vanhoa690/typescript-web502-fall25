@@ -2,6 +2,13 @@ import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const createSchema = z.object({
+  name: z.string().min(1),
+  image: z.string().min(1),
+});
 
 interface FormData {
   name: string;
@@ -9,7 +16,9 @@ interface FormData {
 }
 function Add() {
   // react hook form
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit } = useForm<FormData>({
+    resolver: zodResolver(createSchema),
+  });
 
   const onSubmit = async (values: FormData) => {
     console.log("submit", values);
