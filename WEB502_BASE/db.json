@@ -337,20 +337,20 @@
       "thumbnail": "https://cdn.hoanghamobile.com/Uploads/2024/08/14/bluetooth-sounarc-p2.png;trim.threshold=80;trim.percentpadding=0.5;width=240;height=240;mode=pad;paddingWidth=5;"
     },
     {
-      "id": "4cba",
-      "title": "sản phẩm 1",
+      "title": "1",
+      "price": 100,
+      "thumbnail": "https://lh3.googleusercontent.com/pw/AP1GczO34mHOHwPgwAG8Ta7BrHHrv_EbaPul2GiIeaBhTmXZctqdlEP-qm0NMSN29d8xSbPVzfayA_BXeMl7JL25z5iDbbYiv1hRkZq7GuyRZ_qc_mYHd5yutolwm0zDNoAGyUVIGylTArrh972ChL88rcmC=w215-h322-s-no-gm?authuser=4",
+      "description": "2",
       "category": "laptops",
-      "description": "mô tả",
-      "price": 123,
-      "thumbnail": "https://picsum.photos/200/200"
+      "id": "tL37DNr"
     },
     {
-      "title": "14444",
-      "price": "2",
+      "title": "3",
+      "price": 100,
       "thumbnail": "https://lh3.googleusercontent.com/pw/AP1GczO34mHOHwPgwAG8Ta7BrHHrv_EbaPul2GiIeaBhTmXZctqdlEP-qm0NMSN29d8xSbPVzfayA_BXeMl7JL25z5iDbbYiv1hRkZq7GuyRZ_qc_mYHd5yutolwm0zDNoAGyUVIGylTArrh972ChL88rcmC=w215-h322-s-no-gm?authuser=4",
       "description": "3",
       "category": "laptops",
-      "id": "5mmLMOK"
+      "id": "D9gTSQG"
     }
   ],
   "courses": [

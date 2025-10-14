@@ -3,6 +3,8 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ProductInput } from "../interfaces/Product";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 // const productInit: ProductInput ={
 //   title:'',
@@ -13,6 +15,13 @@ import { ProductInput } from "../interfaces/Product";
 // }
 
 function Add() {
+  const productSchema = z.object({
+    title: z.string().min(1, "Tên sản phẩm không được để trống"),
+    price: z.number().min(1, "Giá phải lớn hơn 0"),
+    thumbnail: z.string().min(1, "Vui lòng chọn danh mục"),
+    description: z.string().min(1, "Vui lòng chọn danh mục"),
+    category: z.string().min(1, "Vui lòng chọn danh mục"),
+  });
   // const [product,setProduct] = useState<ProductInput>(productInit);
 
   // const handleSubmit =async (e: React.FormEvent<HTMLFormElement>)=>{
@@ -33,14 +42,22 @@ function Add() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm<ProductInput>();
+  } = useForm<ProductInput>({
+    defaultValues: {
+      price: 100,
+      category: "laptops",
+    },
+    resolver: zodResolver(productSchema),
+  });
 
   const onSubmit = async (data: ProductInput) => {
     // console.log(data);
     try {
       await axios.post(`http://localhost:3000/products`, data);
       toast.success("Thêm thành công");
+      reset();
       navigate("/admin/product");
     } catch (error) {
       // toast.error("Thêm thất bại")
@@ -73,17 +90,7 @@ function Add() {
             //     }
             //   })
             // }}
-            {...register("title", {
-              required: "Cần nhập thông tin tên sản phẩm",
-              minLength: {
-                value: 3,
-                message: "Cần tối thiểu 3 ký tự",
-              },
-              maxLength: {
-                value: 10,
-                message: "Cần tối đa 10 ký tự",
-              },
-            })}
+            {...register("title")}
           />
           {errors?.title && (
             <span className="text-danger">{errors?.title?.message}</span>
