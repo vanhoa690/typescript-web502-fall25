@@ -351,6 +351,14 @@
       "description": "3",
       "category": "laptops",
       "id": "D9gTSQG"
+    },
+    {
+      "title": "3333",
+      "price": 22,
+      "thumbnail": "https://lh3.googleusercontent.com/pw/AP1GczO34mHOHwPgwAG8Ta7BrHHrv_EbaPul2GiIeaBhTmXZctqdlEP-qm0NMSN29d8xSbPVzfayA_BXeMl7JL25z5iDbbYiv1hRkZq7GuyRZ_qc_mYHd5yutolwm0zDNoAGyUVIGylTArrh972ChL88rcmC=w215-h322-s-no-gm?authuser=4",
+      "description": "3",
+      "category": "laptops",
+      "id": "wG1yG7r"
     }
   ],
   "courses": [
@@ -395,6 +403,12 @@
       "password": "$2a$10$Q87Te/GgEjGUuw6I.M.YcO/ee1U9rQQVF4NmIoubABRXgZ.S5Y5vG",
       "username": "admin",
       "id": 2
+    },
+    {
+      "email": "demo1@refine.dev",
+      "password": "$2a$10$OIoWknD1ZPwqFf9j.mRbUu/QompUUy1X3CuTfUrnqWr4s4FDCLoAW",
+      "username": "vanhoa100",
+      "id": 3
     }
   ]
 }
