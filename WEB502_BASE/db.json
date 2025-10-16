@@ -31,6 +31,12 @@
       "image": "https://anphat.com.vn/media/lib/02-06-2021/gaming.jpg",
       "description": "Tai nghe chống ồn, pin 35 giờ, âm thanh cân bằng.",
       "category": "accessory"
+    },
+    {
+      "name": "22",
+      "image": "222",
+      "price": 3333,
+      "id": 10
     }
   ]
 }

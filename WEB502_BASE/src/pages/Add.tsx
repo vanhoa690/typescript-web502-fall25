@@ -6,12 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const createSchema = z.object({
   name: z.string().min(10, "Tên sản phẩm không được để trống"),
-  image: z.string().min(10, "Hinh anh không được để trống"),
+  image: z.string().min(1, "Hinh anh không được để trống"),
+  price: z.number().min(1, "Gia không được để trống"),
+  category: z.string().min(1, "Danh muc không được để trống"),
 });
 
 interface FormData {
   name: string;
   image: string;
+  price: number;
+  category: string;
 }
 function Add() {
   // react hook form
@@ -21,6 +25,11 @@ function Add() {
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(createSchema),
+    defaultValues: {
+      price: 100,
+      category: "PC",
+    },
+    // mode: "onChange",
   });
 
   const onSubmit = async (values: FormData) => {
@@ -58,6 +67,29 @@ function Add() {
           />
           {/* {errors} */}
           {errors?.image && <span>{errors.image.message}</span>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="image" className="form-label">
+            Price
+          </label>
+          <input
+            {...register("price", { valueAsNumber: true })}
+            type="number"
+            className="form-control"
+            id="price"
+          />
+          {/* {errors} */}
+          {errors?.price && <span>{errors.price.message}</span>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="selectOption" className="form-label">
+            Category
+          </label>
+          <select className="form-select" {...register("category")}>
+            <option value={"Laptop"}>Laptop</option>
+            <option value={"Mobile"}>Mobile</option>
+            <option value={"PC"}>PC</option>
+          </select>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
