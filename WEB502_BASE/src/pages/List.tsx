@@ -1,6 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 interface IProduct {
   id: number;
@@ -58,6 +59,7 @@ function List() {
                 <td>{item.price}</td>
                 <td>
                   <button onClick={() => handleDelete(item.id)}>Delete</button>
+                  <Link to={`/admin/edit/${item.id}`}>Edit</Link>
                 </td>
               </tr>
             );

@@ -1,10 +1,72 @@
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
+const createSchema = z.object({
+  name: z.string().min(10, "Tên sản phẩm không được để trống"),
+  image: z.string().min(10, "Hinh anh không được để trống"),
+});
+
+interface FormData {
+  name: string;
+  image: string;
+}
 function Edit() {
+  // lay thong tin detail: id
+  // useParams: lay id ve
+  // react hook form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(createSchema),
+  });
+
+  const onSubmit = async (values: FormData) => {
+    console.log("submit", values);
+    await axios.put("http://localhost:3000/products", values);
+    toast.success("them thanh cong");
+  };
+
   return (
     <div>
-      <h1>Cập nhật</h1>
+      <h1>Cap nhat</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Name
+          </label>
+          <input
+            {...register("name")} // value, onChange ....
+            type="text"
+            className="form-control"
+            id="name"
+          />
+          {/* {errors} */}
+          {errors?.name && <span>{errors.name.message}</span>}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="image" className="form-label">
+            Image
+          </label>
+          <input
+            {...register("image")} // value, onChange ....
+            type="text"
+            className="form-control"
+            id="image"
+          />
+          {/* {errors} */}
+          {errors?.image && <span>{errors.image.message}</span>}
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Edit
+export default Edit;
