@@ -1,4 +1,4 @@
-# ĐỀ THI — WEB502: Ứng dụng quản lý khóa học bằng React + TypeScript
+# ĐỀ Kiem Tra — WEB502: Ứng dụng quản lý khóa học bằng React + TypeScript
 
 **Công nghệ:** React + TypeScript, fetch/axios, UI (Bootstrap)
 
@@ -44,8 +44,8 @@ Tạo các route sau:
 - `POST /courses`
 - `PUT /courses/:id`
 - `DELETE /courses/:id`
-- `POST /auth/register`
-- `POST /auth/login`
+- `POST /register`
+- `POST /login`
 
 ---
 
