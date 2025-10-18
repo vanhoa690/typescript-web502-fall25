@@ -7,6 +7,7 @@ import Add from "./pages/Add";
 import Edit from "./pages/Edit";
 import ClientLayout from "./layouts/ClientLayout";
 import AdminLayout from "./layouts/AdminLayout";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Home />} />
           <Route path="users" element={<Users />}></Route>
+          <Route path="register" element={<Register />}></Route>
         </Route>
 
         {/* Admin Layout */}
